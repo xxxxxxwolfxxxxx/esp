@@ -11,7 +11,7 @@ export default function ImpressumPage() {
   return (
     <>
       <Navbar />
-      <div className="legal-page pt-32 pb-20">
+      <div className="legal-page pt-44 pb-20">
         <div className="container mx-auto px-5 max-w-4xl">
           <h1 className="text-4xl font-extrabold mb-8 text-slate-900">Impressum</h1>
           <div className="prose prose-slate max-w-none">
@@ -21,7 +21,7 @@ export default function ImpressumPage() {
               <h3 className="text-2xl font-bold mb-4 text-slate-800">Betreiber der Website:</h3>
               <p className="text-slate-700 leading-relaxed">
                 Elektroservice Pägelow<br />
-                Inhaber: Matthias Pägelow<br />
+                Inhaber: Torsten Pägelow<br />
                 Vellahner Weg 6<br />
                 19260 Banzin
               </p>

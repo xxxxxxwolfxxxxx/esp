@@ -10,7 +10,7 @@ export default function DatenschutzPage() {
   return (
     <>
       <Navbar />
-      <div className="legal-page pt-32 pb-20">
+      <div className="legal-page pt-44 pb-20">
         <div className="container mx-auto px-5 max-w-4xl">
           <h1 className="text-4xl font-extrabold mb-8 text-slate-900 font-sans">Datenschutzerklärung</h1>
           <div className="prose prose-slate max-w-none">

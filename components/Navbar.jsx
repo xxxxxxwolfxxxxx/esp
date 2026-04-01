@@ -6,8 +6,10 @@ import Link from 'next/link';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [isHome, setIsHome] = useState(true);
 
   useEffect(() => {
+    setIsHome(window.location.pathname === '/');
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
@@ -16,7 +18,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${scrolled || !isHome ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <Link href="/" className="logo-section">
           <Image 
@@ -32,10 +34,19 @@ const Navbar = () => {
           </div>
         </Link>
         <ul className="nav-links">
-          <li><Link href="/">Home</Link></li>
-          <li><Link href="/#services">Leistungen</Link></li>
-          <li><Link href="/#dguv">DGUV V3</Link></li>
-          <li><Link href="/#contact" className="nav-cta">Anfrage senden</Link></li>
+          {isHome ? (
+            <>
+              <li><Link href="#services">Leistungen</Link></li>
+              <li><Link href="#dguv">DGUV V3</Link></li>
+              <li><Link href="#contact" className="nav-cta">Anfrage senden</Link></li>
+            </>
+          ) : (
+            <>
+              <li><Link href="/#services">Leistungen</Link></li>
+              <li><Link href="/#dguv">DGUV V3</Link></li>
+              <li><Link href="/#contact" className="nav-cta">Anfrage senden</Link></li>
+            </>
+          )}
         </ul>
       </div>
       <style jsx>{`
@@ -44,15 +55,15 @@ const Navbar = () => {
           top: 0;
           left: 0;
           width: 100%;
-          padding: 20px 5%;
+          padding: 12px 5%;
           z-index: 1000;
           transition: var(--transition);
         }
         .navbar.scrolled {
-          background: rgba(15, 23, 42, 0.9);
+          background: rgba(15, 23, 42, 0.95);
           backdrop-filter: blur(10px);
-          padding: 12px 5%;
-          box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+          padding: 8px 5%;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.15);
         }
         .nav-container {
           max-width: 1400px;
@@ -69,8 +80,8 @@ const Navbar = () => {
         }
         .logo-img {
           height: auto;
-          width: 64px;
-          border-radius: 10px;
+          width: 48px;
+          border-radius: 8px;
         }
         .logo-text {
           display: flex;
@@ -80,8 +91,8 @@ const Navbar = () => {
         .brand-name {
           font-weight: 800;
           color: var(--white);
-          font-size: 1.5rem;
-          letter-spacing: 1px;
+          font-size: 1.25rem;
+          letter-spacing: 0.5px;
         }
         .brand-sub {
           color: var(--secondary);
