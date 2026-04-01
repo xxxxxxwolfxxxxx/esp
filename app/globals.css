@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
   --primary: #0f172a; /* Deep Navy */
@@ -20,12 +18,14 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: var(--font-main);
-  color: var(--text);
-  background-color: var(--background);
-  line-height: 1.6;
-  overflow-x: hidden;
+@layer base {
+  body {
+    font-family: var(--font-main);
+    color: var(--text);
+    background-color: var(--background);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
 }
 
 a {
@@ -123,3 +123,10 @@ h1, h2, h3 {
 .header-offset {
   margin-top: 100px;
 }
+
+/* Tailwind v4: Farbklassen manuell definiert, da das @import-Scanning diese nicht generiert */
+.text-white { color: #ffffff; }
+.text-slate-600 { color: #475569; }
+.text-slate-700 { color: #334155; }
+.text-slate-800 { color: #1e293b; }
+.text-slate-900 { color: #0f172a; }

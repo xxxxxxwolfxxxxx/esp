@@ -10,7 +10,7 @@ export default function AGBPage() {
   return (
     <>
       <Navbar />
-      <div className="legal-page">
+      <div className="legal-page" style={{ paddingTop: '200px' }}>
         <div className="container mx-auto px-5 max-w-4xl">
           <h1 className="text-4xl font-extrabold mb-8 text-slate-900 font-sans">Allgemeine Geschäftsbedingungen (AGB)</h1>
           <div className="prose prose-slate max-w-none">

@@ -3,19 +3,20 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
-  const [isHome, setIsHome] = useState(true);
+  const isHome = pathname === '/';
 
   useEffect(() => {
-    setIsHome(window.location.pathname === '/');
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [pathname]);
 
   return (
     <nav className={`navbar ${scrolled || !isHome ? 'scrolled' : ''}`}>
@@ -59,10 +60,10 @@ const Navbar = () => {
           width: 100%;
           padding: 12px 5%;
           z-index: 1000;
-          transition: var(--transition);
+          transition: all 0.3s ease;
         }
         .navbar.scrolled {
-          background: rgba(15, 23, 42, 0.95);
+          background: #0f172a;
           backdrop-filter: blur(10px);
           padding: 8px 5%;
           box-shadow: 0 4px 20px rgba(0,0,0,0.15);
@@ -92,12 +93,12 @@ const Navbar = () => {
         }
         .brand-name {
           font-weight: 800;
-          color: var(--white);
+          color: white;
           font-size: 1.25rem;
           letter-spacing: 0.5px;
         }
         .brand-sub {
-          color: var(--secondary);
+          color: #fbbf24;
           font-size: 1rem;
           font-weight: 600;
         }
@@ -106,23 +107,19 @@ const Navbar = () => {
           gap: 32px;
           align-items: center;
         }
-        .nav-links :global(a) {
-          color: var(--white);
+        :global(.nav-links a) {
+          color: white;
           font-weight: 600;
           font-size: 0.9375rem;
         }
-        .nav-links :global(a):hover {
-          color: var(--secondary);
+        :global(.nav-links a:hover) {
+          color: #fbbf24;
         }
-        .nav-links :global(.nav-cta) {
-          background: var(--secondary);
-          color: var(--primary) !important;
+        :global(.nav-links .nav-cta) {
+          background: #fbbf24;
+          color: #0f172a !important;
           padding: 10px 20px;
           border-radius: 8px;
-        }
-        .nav-links :global(.nav-cta):hover {
-          background: var(--white);
-          transform: translateY(-2px);
         }
         @media (max-width: 768px) {
           .nav-links { display: none; }

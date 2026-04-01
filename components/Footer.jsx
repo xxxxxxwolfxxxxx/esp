@@ -18,8 +18,15 @@ const Footer = () => {
         .footer {
           padding: 40px 5%;
           background: #0a1120;
-          color: var(--text-muted);
+          color: #94a3b8;
           font-size: 0.875rem;
+        }
+        .footer-links :global(a) {
+          color: #f8fafc;
+          font-weight: 500;
+        }
+        .footer-links :global(a:hover) {
+          color: #fbbf24;
         }
         .footer-container {
           max-width: 1200px;
