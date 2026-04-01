@@ -37,25 +37,16 @@ export default function ImpressumPage() {
             </section>
 
             <section className="mb-10">
-              <h3 className="text-2xl font-bold mb-4 text-slate-800">Umsatzsteuer-ID:</h3>
+              <h3 className="text-2xl font-bold mb-4 text-slate-800">Steuernummer:</h3>
               <p className="text-slate-700 leading-relaxed">
-                Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-                DE 123456789
+                087/255/00840<br />
+                Finanzamt Hagenow
               </p>
             </section>
 
             <section className="mb-10">
-              <h3 className="text-2xl font-bold mb-4 text-slate-800">Aufsichtsbehörde:</h3>
-              <p className="text-slate-700 leading-relaxed">Handwerkskammer Schwerin</p>
-            </section>
-
-            <section className="mb-10">
-              <h3 className="text-2xl font-bold mb-4 text-slate-800">Berufsbezeichnung und berufsrechtliche Regelungen:</h3>
-              <p className="text-slate-700 leading-relaxed">
-                Berufsbezeichnung: Elektrotechnikermeister (verliehen in der Bundesrepublik Deutschland)<br />
-                Zuständige Kammer: Handwerkskammer Schwerin<br />
-                Es gelten folgende berufsrechtliche Regelungen: Handwerksordnung (HwO)
-              </p>
+              <h3 className="text-2xl font-bold mb-4 text-slate-800">Verantwortlicher gemäß § 55 Abs. 2 RStV:</h3>
+              <p className="text-slate-700 leading-relaxed">Torsten Pägelow, Vellahner Weg 6, 19260 Banzin</p>
             </section>
 
             <section className="mb-10">
