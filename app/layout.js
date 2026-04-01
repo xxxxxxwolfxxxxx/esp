@@ -10,6 +10,10 @@ export const metadata = {
   title: "Elektroservice Pägelow | Ihr Meisterbetrieb in Banzin",
   description: "Professionelle Elektroinstallationen, MSR-Technik und DGUV V3 Prüfungen. Ihr zuverlässiger Partner Elektroservice Pägelow in Banzin und Umgebung.",
   keywords: "Elektroservice, Pägelow, Banzin, Elektroinstallation, MSR-Technik, DGUV V3, Meisterbetrieb",
+  icons: {
+    icon: '/favicon.png',
+    apple: '/apple-touch-icon.png',
+  },
 };
 
 export default function RootLayout({ children }) {
