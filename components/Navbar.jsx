@@ -43,10 +43,14 @@ const Navbar = () => {
           <Image
             src="/logo.png"
             alt="Elektroservice Pägelow Logo"
-            width={64}
-            height={64}
+            width={80}
+            height={80}
             className="logo-img"
           />
+          <div className="logo-text">
+            <span className="brand-name">ELEKTROSERVICE</span>
+            <span className="brand-sub">PÄGELOW</span>
+          </div>
         </Link>
 
         {/* Desktop-Links */}
@@ -109,11 +113,28 @@ const Navbar = () => {
           align-items: center;
           gap: 12px;
           text-decoration: none;
+          flex-wrap: nowrap;
         }
         .logo-img {
           height: auto;
-          width: 64px;
+          width: 80px;
           border-radius: 10px;
+        }
+        .logo-text {
+          display: flex;
+          flex-direction: column;
+          line-height: 1.15;
+        }
+        .brand-name {
+          font-weight: 800;
+          color: white;
+          font-size: 1.1rem;
+          letter-spacing: 0.5px;
+        }
+        .brand-sub {
+          color: #fbbf24;
+          font-size: 0.95rem;
+          font-weight: 600;
         }
         .nav-links {
           display: flex;
@@ -209,6 +230,7 @@ const Navbar = () => {
           .nav-links { display: none; }
           .hamburger { display: flex; }
           .mobile-menu { display: block; }
+          .logo-text { display: none; }
         }
       `}</style>
     </nav>
