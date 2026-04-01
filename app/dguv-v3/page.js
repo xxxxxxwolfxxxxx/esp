@@ -1,5 +1,3 @@
-"use client";
-
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -28,7 +26,7 @@ export default function DguvPage() {
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100">
-                <h3 className="text-xl font-bold mb-4 text-primary">Ortsveränderliche Geräte</h3>
+                <h3 className="text-xl font-bold mb-4 text-[#0f172a]">Ortsveränderliche Geräte</h3>
                 <ul className="space-y-2 text-slate-600">
                   <li>• Kaffeemaschinen & Wasserkocher</li>
                   <li>• PCs, Monitore & Drucker</li>
@@ -37,7 +35,7 @@ export default function DguvPage() {
                 </ul>
               </div>
               <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100">
-                <h3 className="text-xl font-bold mb-4 text-primary">Ortsfeste Anlagen</h3>
+                <h3 className="text-xl font-bold mb-4 text-[#0f172a]">Ortsfeste Anlagen</h3>
                 <ul className="space-y-2 text-slate-600">
                   <li>• Unterverteilungen</li>
                   <li>• Elektrische Gebäudeinstallation</li>
@@ -74,7 +72,7 @@ export default function DguvPage() {
               </div>
             </section>
 
-            <div className="bg-primary text-white p-10 rounded-3xl text-center">
+            <div className="bg-[#0f172a] text-white p-10 rounded-3xl text-center">
               <h2 className="text-2xl font-bold mb-4 text-white">Prüfung fällig?</h2>
               <p className="mb-8 opacity-90">Kontaktieren Sie uns für ein unverbindliches Angebot zur DGUV V3 Prüfung Ihrer Betriebsmittel.</p>
               <Link href="/#contact" className="btn btn-primary inline-block">
@@ -85,10 +83,6 @@ export default function DguvPage() {
         </div>
       </div>
       <Footer />
-      <style jsx>{`
-        .text-primary { color: #0f172a; }
-        .bg-primary { background-color: #0f172a; }
-      `}</style>
     </>
   );
 }
