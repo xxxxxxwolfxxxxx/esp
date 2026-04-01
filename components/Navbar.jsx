@@ -22,11 +22,11 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled || !isHome ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <Link href="/" className="logo-section">
-          <Image 
-            src="/logo.png" 
-            alt="Elektroservice Pägelow Logo" 
-            width={64} 
-            height={64} 
+          <Image
+            src="/logo.png"
+            alt="Elektroservice Pägelow Logo"
+            width={64}
+            height={64}
             className="logo-img"
           />
           <div className="logo-text">
