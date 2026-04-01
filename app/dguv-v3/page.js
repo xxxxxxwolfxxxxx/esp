@@ -12,7 +12,7 @@ export default function DguvPage() {
   return (
     <>
       <Navbar />
-      <div className="legal-page pt-44 pb-20">
+      <div className="legal-page">
         <div className="container mx-auto px-5 max-w-4xl">
           <span className="chip">Sicherheit & Compliance</span>
           <h1 className="text-4xl font-extrabold mb-8 text-slate-900">DGUV V3 Prüfungen</h1>
@@ -72,9 +72,9 @@ export default function DguvPage() {
               </div>
             </section>
 
-            <div className="bg-[#0f172a] text-white p-10 rounded-3xl text-center">
+            <div className="bg-[#0f172a] text-white p-10 rounded-3xl text-center shadow-xl">
               <h2 className="text-2xl font-bold mb-4 text-white">Prüfung fällig?</h2>
-              <p className="mb-8 opacity-90">Kontaktieren Sie uns für ein unverbindliches Angebot zur DGUV V3 Prüfung Ihrer Betriebsmittel.</p>
+              <p className="mb-8 text-white font-medium">Kontaktieren Sie uns für ein unverbindliches Angebot zur DGUV V3 Prüfung Ihrer Betriebsmittel.</p>
               <Link href="/#contact" className="btn btn-primary inline-block">
                 Jetzt Termin vereinbaren
               </Link>
