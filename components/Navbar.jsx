@@ -47,10 +47,6 @@ const Navbar = () => {
             height={64}
             className="logo-img"
           />
-          <div className="logo-text">
-            <span className="brand-name">ELEKTROSERVICE</span>
-            <span className="brand-sub">PÄGELOW</span>
-          </div>
         </Link>
 
         {/* Desktop-Links */}
@@ -116,24 +112,8 @@ const Navbar = () => {
         }
         .logo-img {
           height: auto;
-          width: 48px;
-          border-radius: 8px;
-        }
-        .logo-text {
-          display: flex;
-          flex-direction: column;
-          line-height: 1.1;
-        }
-        .brand-name {
-          font-weight: 800;
-          color: white;
-          font-size: 1.25rem;
-          letter-spacing: 0.5px;
-        }
-        .brand-sub {
-          color: #fbbf24;
-          font-size: 1rem;
-          font-weight: 600;
+          width: 64px;
+          border-radius: 10px;
         }
         .nav-links {
           display: flex;
