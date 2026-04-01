@@ -28,11 +28,13 @@ const Navbar = () => {
     { href: '/', label: 'Home' },
     { href: '#services', label: 'Leistungen' },
     { href: '/dguv-v3', label: 'DGUV V3' },
+    { href: '/stellenanzeige', label: 'Jobs' },
     { href: '#contact', label: 'Anfrage senden', cta: true },
   ] : [
     { href: '/', label: 'Home' },
     { href: '/#services', label: 'Leistungen' },
     { href: '/dguv-v3', label: 'DGUV V3' },
+    { href: '/stellenanzeige', label: 'Jobs' },
     { href: '/#contact', label: 'Anfrage senden', cta: true },
   ];
 
