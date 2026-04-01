@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation';
 const Navbar = () => {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const isHome = pathname === '/';
 
   useEffect(() => {
@@ -17,6 +18,23 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [pathname]);
+
+  // Menü bei Routenwechsel schließen
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
+  const links = isHome ? [
+    { href: '/', label: 'Home' },
+    { href: '#services', label: 'Leistungen' },
+    { href: '/dguv-v3', label: 'DGUV V3' },
+    { href: '#contact', label: 'Anfrage senden', cta: true },
+  ] : [
+    { href: '/', label: 'Home' },
+    { href: '/#services', label: 'Leistungen' },
+    { href: '/dguv-v3', label: 'DGUV V3' },
+    { href: '/#contact', label: 'Anfrage senden', cta: true },
+  ];
 
   return (
     <nav className={`navbar ${scrolled || !isHome ? 'scrolled' : ''}`}>
@@ -34,24 +52,39 @@ const Navbar = () => {
             <span className="brand-sub">PÄGELOW</span>
           </div>
         </Link>
+
+        {/* Desktop-Links */}
         <ul className="nav-links">
-          {isHome ? (
-            <>
-              <li><Link href="/">Home</Link></li>
-              <li><Link href="#services">Leistungen</Link></li>
-              <li><Link href="/dguv-v3">DGUV V3</Link></li>
-              <li><Link href="#contact" className="nav-cta">Anfrage senden</Link></li>
-            </>
-          ) : (
-            <>
-              <li><Link href="/">Home</Link></li>
-              <li><Link href="/#services">Leistungen</Link></li>
-              <li><Link href="/dguv-v3">DGUV V3</Link></li>
-              <li><Link href="/#contact" className="nav-cta">Anfrage senden</Link></li>
-            </>
-          )}
+          {links.map((l) => (
+            <li key={l.href}>
+              <Link href={l.href} className={l.cta ? 'nav-cta' : ''}>{l.label}</Link>
+            </li>
+          ))}
+        </ul>
+
+        {/* Hamburger-Button */}
+        <button
+          className={`hamburger ${menuOpen ? 'open' : ''}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Menü öffnen"
+        >
+          <span /><span /><span />
+        </button>
+      </div>
+
+      {/* Mobile-Menü */}
+      <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
+        <ul>
+          {links.map((l) => (
+            <li key={l.href}>
+              <Link href={l.href} className={l.cta ? 'nav-cta' : ''} onClick={() => setMenuOpen(false)}>
+                {l.label}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
+
       <style jsx>{`
         .navbar {
           position: fixed;
@@ -106,6 +139,7 @@ const Navbar = () => {
           display: flex;
           gap: 32px;
           align-items: center;
+          list-style: none;
         }
         :global(.nav-links a) {
           color: white;
@@ -121,8 +155,80 @@ const Navbar = () => {
           padding: 10px 20px;
           border-radius: 8px;
         }
+
+        /* Hamburger */
+        .hamburger {
+          display: none;
+          flex-direction: column;
+          gap: 5px;
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 4px;
+          z-index: 1100;
+        }
+        .hamburger span {
+          display: block;
+          width: 26px;
+          height: 2px;
+          background: white;
+          border-radius: 2px;
+          transition: all 0.3s ease;
+          transform-origin: center;
+        }
+        .hamburger.open span:nth-child(1) {
+          transform: translateY(7px) rotate(45deg);
+        }
+        .hamburger.open span:nth-child(2) {
+          opacity: 0;
+        }
+        .hamburger.open span:nth-child(3) {
+          transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* Mobile-Menü */
+        .mobile-menu {
+          display: none;
+          overflow: hidden;
+          max-height: 0;
+          transition: max-height 0.35s ease;
+          background: #0f172a;
+        }
+        .mobile-menu.open {
+          max-height: 400px;
+        }
+        .mobile-menu ul {
+          list-style: none;
+          padding: 16px 5% 24px;
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+        }
+        :global(.mobile-menu a) {
+          display: block;
+          padding: 12px 0;
+          color: white;
+          font-weight: 600;
+          font-size: 1.05rem;
+          border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        :global(.mobile-menu a:hover) {
+          color: #fbbf24;
+        }
+        :global(.mobile-menu .nav-cta) {
+          background: #fbbf24;
+          color: #0f172a !important;
+          padding: 12px 20px;
+          border-radius: 8px;
+          text-align: center;
+          margin-top: 8px;
+          border-bottom: none !important;
+        }
+
         @media (max-width: 768px) {
           .nav-links { display: none; }
+          .hamburger { display: flex; }
+          .mobile-menu { display: block; }
         }
       `}</style>
     </nav>
