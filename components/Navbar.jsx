@@ -46,8 +46,8 @@ const Navbar = () => {
             <Image
               src="/logo.png"
               alt="Elektroservice Pägelow Logo"
-              width={100}
-              height={62}
+              width={150}
+              height={100}
               className="logo-img"
             />
           </span>
@@ -127,7 +127,7 @@ const Navbar = () => {
           overflow: hidden;
         }
         .logo-img {
-          width: 100px !important;
+          width: 150px !important;
           height: auto !important;
           border-radius: 8px;
         }
