@@ -42,13 +42,15 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled || !isHome ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <Link href="/" className="logo-section">
-          <Image
-            src="/logo.png"
-            alt="Elektroservice Pägelow Logo"
-            width={80}
-            height={80}
-            className="logo-img"
-          />
+          <span className="logo-img-wrap">
+            <Image
+              src="/logo.png"
+              alt="Elektroservice Pägelow Logo"
+              width={100}
+              height={62}
+              className="logo-img"
+            />
+          </span>
           <div className="logo-text">
             <span className="brand-name">ELEKTROSERVICE</span>
             <span className="brand-sub">PÄGELOW</span>
@@ -112,20 +114,28 @@ const Navbar = () => {
         }
         .logo-section {
           display: flex;
+          flex-direction: row;
           align-items: center;
-          gap: 12px;
+          gap: 14px;
           text-decoration: none;
-          flex-wrap: nowrap;
+          flex-shrink: 0;
+        }
+        .logo-img-wrap {
+          display: flex;
+          flex-shrink: 0;
+          border-radius: 12px;
+          overflow: hidden;
         }
         .logo-img {
-          height: auto;
-          width: 80px;
-          border-radius: 10px;
+          width: 100px !important;
+          height: auto !important;
+          border-radius: 8px;
         }
         .logo-text {
           display: flex;
           flex-direction: column;
-          line-height: 1.15;
+          line-height: 1.2;
+          white-space: nowrap;
         }
         .brand-name {
           font-weight: 800;
