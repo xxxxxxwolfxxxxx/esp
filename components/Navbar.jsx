@@ -37,13 +37,13 @@ const Navbar = () => {
           {isHome ? (
             <>
               <li><Link href="#services">Leistungen</Link></li>
-              <li><Link href="#dguv">DGUV V3</Link></li>
+              <li><Link href="/dguv-v3">DGUV V3</Link></li>
               <li><Link href="#contact" className="nav-cta">Anfrage senden</Link></li>
             </>
           ) : (
             <>
               <li><Link href="/#services">Leistungen</Link></li>
-              <li><Link href="/#dguv">DGUV V3</Link></li>
+              <li><Link href="/dguv-v3">DGUV V3</Link></li>
               <li><Link href="/#contact" className="nav-cta">Anfrage senden</Link></li>
             </>
           )}

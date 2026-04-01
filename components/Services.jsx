@@ -48,6 +48,11 @@ const Services = () => {
             <div className="service-icon">{s.icon}</div>
             <h3>{s.title}</h3>
             <p>{s.desc}</p>
+            {s.title === "DGUV V3 Prüfungen" && (
+              <a href="/dguv-v3" className="text-secondary font-bold mt-4 inline-block hover:underline">
+                Mehr erfahren →
+              </a>
+            )}
           </div>
         ))}
       </div>
